@@ -16,7 +16,7 @@ const Navbar= ()=> {
 					</Menu>
 				</Left>
 			
-				<span>button</span>
+				<Button>Join Us</Button>
 
 			</Wrapper>
 		</Contain>
@@ -58,7 +58,14 @@ const Navbar= ()=> {
 	`;
 	const Button = styled.button`
 	color:white;
-	background
+	border: 1px solid white;
+	background:crimson;
+	font-weight: bold;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px 15px;
+	letter-spacing: 2px;
+
 	`
 
 export default Navbar
