@@ -10,7 +10,7 @@ const Navbar= ()=> {
 				  <Logo>Migimal</Logo>
            <Menu>
 						<MenuItem>Home</MenuItem>
-						<MenuItem>About</MenuItem>
+						<MenuItem>Features</MenuItem>
 						<MenuItem>Portfolio</MenuItem>
 						<MenuItem>contact</MenuItem>
 					</Menu>

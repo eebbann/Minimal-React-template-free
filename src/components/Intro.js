@@ -1,11 +1,23 @@
-import React from 'react'
+import React from 'react';
 import styled  from 'styled-components';
+import Banner from './images/birdeye_001a.gif'
 
 function Intro() {
 	return (
 		<Container>
-		<Left>l</Left>
-		<Right>r</Right>
+		<Left>
+			<Title> Adventure in Creative age </Title>
+			<Desc>We believe that designing products and services in close partnership with our 
+				clients is the only way to have a real impact on their business. </Desc>
+				<Info>
+					<Button>START A PROJECT </Button>
+					<Contact>
+						<Phone> Call Us (012) 345 -6789</Phone>
+					<ContactText>For any Enquiry or Complain  </ContactText>
+					</Contact>
+				</Info>
+		</Left>
+		<Right> <Image src={Banner}/> </Right>
 
 		</Container>
 	)
@@ -13,14 +25,81 @@ function Intro() {
 
 //styled-components
  const Container = styled.div`
-	height: calc(100vh-50px);
+	height: calc(100vh - 50px);
 	display:flex;
-	background-color: red;
+	padding:10px
+	`;
+	const Left = styled.div`
+	width:60%;
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+	 justify-content: center ;
+	`;
+
+	const Title = styled.div`
+	font-size: 60px;
+	font-weight: bolder;
+	letter-spacing:4px;
+	width:60%
+	`;
+	const Desc = styled.p`
+	width:60%;
+	font-size : 20px;
+	font-weight: lighter;
+	letter-spacing: 0.5px;
+	margin-top:20px;
+	`;
+	const Info = styled.p`
+	width:60%;
+	display: flex;
+	justify-content:space-between;
+	margin-top: 30px;
+
+	`;
+	 const Button = styled.button`
+	 padding:13px 15px;
+	 cursor: pointer;
+	 background-color: darkblue;
+	 letter-spacing:2px;
+   border-radius: 10px;
+	 color:white;
+	 font-weight: bold;
+	 border:1px solid white;
+
+	 `;
+	const Contact = styled.div`
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	`
-	 const Left = styled.div`
-	 width:60%
-	 `
-	  const Right = styled.div`
-		width:40%
-		`
+	const Phone = styled.div`
+	color:crimson;
+ font-weight:bolder
+ 
+	`
+	const ContactText = styled.div`
+	color:gray;
+	font-weight: lighter;
+	padding-top:5px
+	`;
+	const Right = styled.div`
+	width:40%;
+  display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	`;
+	const Image = styled.img`
+	width: 100%;
+	`;
+ 
+
+
+
+
+
+
+
+
 export default Intro
