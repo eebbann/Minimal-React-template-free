@@ -43,8 +43,11 @@ import Image from './images/comp_4.gif'
 	justify-content: center;
 	 align-items: center;
 	flex-direction: row;
+@media screen and (max-width: 600px) {
+	flex-direction: column;
+}
+	`;
 
-		`;
 	const FormContainer = styled.div`
 	width: 100%;
 	height: 100%;
@@ -55,6 +58,10 @@ import Image from './images/comp_4.gif'
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media screen and (max-width: 600px) {
+	flex-direction:column;
+}
+
 	`;
 	const Button = styled.button`
 	border: 1px solid #fff;
@@ -69,26 +76,39 @@ import Image from './images/comp_4.gif'
 	 margin-bottom: 5%;
 	 `;
 		const Lin = styled.p`
-		font-size: 1.2rem;
+		font-size: 1rem;
 		letter-spacing: 1.3px;
 		font-weight: bold;
 		justify-content: center;
 		align-items: center;
-		padding:10px 45px
+		padding:10px 45px;
+		@media screen and (max-width: 600px) {
+	width:50%;
+	margin-bottom:5%;
+}
+
 		`;
 	const	LeftForm = styled.div`
 	height:100%;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-
+	@media screen and (max-width: 600px) {
+	height:60%;
+	top:30px;
+} 
 	`
 	const RightForm =styled.div`
 	height:100%;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-	margin:20px
+	margin:20px;
+
+	@media screen and (max-width: 600px) {
+	height:50%;
+	margin:0px;
+}
 	`;
 	const Input = styled.input`
 	width: 200px;
@@ -112,12 +132,12 @@ import Image from './images/comp_4.gif'
 	 
 	`;
 	const Linked = styled.img`
-	width: 50%;
+	width: 100%;
 	height: auto;
 	`;
 	const AddressContainer = styled.div`
 	width: 50%;
-	height: 100%;
+	height: 70%;
 	margin-left:40px
 	`;
  export default Contact

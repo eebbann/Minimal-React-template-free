@@ -11,7 +11,7 @@ import Service from './components/Service.js';
  
 
 const Container = styled.div`
-height: 100vh;
+ height: fit-content;
 overflow: hidden;
 `;
 

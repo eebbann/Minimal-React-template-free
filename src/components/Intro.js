@@ -25,9 +25,15 @@ function Intro() {
 
 //styled-components
  const Container = styled.div`
-	height: calc(100vh - 50px);
+	height: calc(100% - 50px);
 	display:flex;
-	padding:10px
+	padding:30px;
+
+	@media only screen and (max-width: 600px) {
+		flex-direction: column;
+		align-items: center;
+		flex:0
+	}
 	`;
 	const Left = styled.div`
 	width:60%;
@@ -35,13 +41,27 @@ function Intro() {
 	 flex-direction: column;
 	 align-items: center;
 	 justify-content: center ;
+	 @media only screen and (max-width: 600px) {
+		flex-direction: column;
+		top:0;
+    width:100%;
+		height: 50%;
+		justify-content:center;
+		align-items: center;
+	}
 	`;
 
 	const Title = styled.div`
 	font-size: 60px;
 	font-weight: bolder;
 	letter-spacing:4px;
-	width:60%
+	width:60%;
+	@media only screen and (max-width: 600px) {
+		font-size: 40px;
+		font-weight: bolder;
+		width: 100%;
+
+	}
 	`;
 	const Desc = styled.p`
 	width:60%;
@@ -49,12 +69,26 @@ function Intro() {
 	font-weight: lighter;
 	letter-spacing: 0.5px;
 	margin-top:20px;
+	@media only screen and (max-width: 600px) {
+		/* margin-top:20px; */
+		width:100%;
+    padding:10px
+	}
 	`;
+
 	const Info = styled.p`
 	width:60%;
 	display: flex;
 	justify-content:space-between;
 	margin-top: 30px;
+	@media only screen and (max-width: 600px) {
+		flex-direction: column;
+		margin-top:20px;
+	  justify-content: center;
+		align-items: center;
+		width:50%;
+      
+	}
 
 	`;
 	 const Button = styled.button`
@@ -66,12 +100,22 @@ function Intro() {
 	 color:white;
 	 font-weight: bold;
 	 border:1px solid white;
+	 @media only screen and (max-width: 600px) {
+		margin-bottom:20px;
+		font-size:12px;
+ 
+	}
 
 	 `;
 	const Contact = styled.div`
 	display:flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	@media only screen and (max-width: 600px) {
+		margin-bottom:20px;
+		font-size:13px;
+ 
+	}
 	`
 	const Phone = styled.div`
 	color:crimson;
@@ -92,6 +136,9 @@ function Intro() {
 	`;
 	const Image = styled.img`
 	width: 100%;
+	@media only screen and (max-width: 600px) {
+		display: none;
+	}
 	`;
  
 

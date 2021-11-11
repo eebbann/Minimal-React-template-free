@@ -34,6 +34,14 @@ width:100%;
 height: 100%;
 justify-content: center;
 align-items: center;
+@media only screen and (max-width: 600px) {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding:0px;
+		margin-top:20px;
+
+	}
 `;
 const Image = styled.img`
 width : 100%;
@@ -41,23 +49,39 @@ display: flex;
 align-items: center;
 justify-content: center;
 padding-left: 10px;
+@media only screen and (max-width: 600px) {
+	display:none;
+
+	}
 `;
 const Title = styled.h1`
 	font-size: 50px;
 	font-weight: bold;
 	letter-spacing:4px;
-	width:60%
+	width:60%;
+	@media only screen and (max-width: 600px) {
+		font-size: 40px;
+		font-weight: bolder;
+		width: 100%;
+     margin-top: 20px;
+	}
 	`;
 const Left = styled.div`
 	width:50%;
- 
+
 `;
 const Right = styled.div`
 	width:60%;
  display: flex;
  flex-direction: column;
  justify-content: center;
- padding-left : 60px
+ padding-left : 60px;
+ @media only screen and (max-width: 600px) {
+		font-size: 40px;
+		font-weight: bolder;
+		width: 100%;
+
+	}
 `;
 const Desc = styled.p`
 	width:80%;
@@ -86,5 +110,10 @@ const Desc = styled.p`
 	margin-top: 20px;
 	font-size: 16px;
 	letter-spacing: 1px;
+	@media only screen and (max-width: 600px) {
+		font-size: 12px;
+		width:40%
+
+	}
 	`;
 export default Feature

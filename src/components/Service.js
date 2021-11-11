@@ -5,7 +5,7 @@ import Minicard from './Minicard';
 import Play from './images/play.png'
 const Service = () => {
 		const [open,setOpen] = useState(false)
-
+     const smallScreen = window.screen <= 600 ? 'true' : 'false'
 	return ( 
 		<Container>
 			<Left><Wrapper>
@@ -25,8 +25,11 @@ const Service = () => {
 				</Left>
 			<Right>
 				<Image open={open} src={Side}/>
-				<Video open={open} autoplay controls src="https://player.vimeo.com/external/374516783.hd.mp4?s=e0f8468cfb38c47b0725d7a20a11b087628ccfed&profile_id=174"/>
-			</Right>
+				
+			</Right>   
+			{smallScreen && open && ( <Modal> <CloseButton onClick={()=>{setOpen(false)}}>close x</CloseButton>
+			<Video open={open} autoplay controls src="https://player.vimeo.com/external/374516783.hd.mp4?s=e0f8468cfb38c47b0725d7a20a11b087628ccfed&profile_id=174"/>
+			 </Modal>)}
 		</Container>
 	)
 }
@@ -37,6 +40,13 @@ display: flex;
 justify-content: space-between;
 background:#f7f7f7;
  padding: 20px;
+ @media only screen and (max-width: 600px) {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 0px;
+		padding-top: 60px;
+	} 
 `;
 const Icon = styled.img`
 width: 20px;
@@ -47,30 +57,88 @@ padding: 100px;
 display: flex;
 flex-direction: column;
 justify-content:center;
+@media only screen and (max-width: 600px) {
+		width: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding : 20px;
+    margin-top:20px;
+		border-top: 1px solid #e6e6e6;
+	}
 `;
+//modal
+const Modal = styled.div`
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+`;
+const CloseButton = styled.button`
+width:5%;
+height:5%;
+border-radius: 10px;
+padding:5px;
+position: absolute;
+top: 0;
+font-size: 13px;
+margin-top: 10%;
+z-index:99999;
+right: 35px;
+@media only screen and (max-width: 600px) {
+	width:15%;
+border-radius: 50px;
+padding:5px;
+position: absolute;
+top: 0;
+margin-top: 45%;
+z-index:99999;
+right: 0;
+}
+
+`
 const Title = styled.h1`
  font-size: 50px;
 display: flex;
 flex-direction: column;
-`
+@media only screen and (max-width: 600px) {
+		font-size: 40px;
+
+	}
+`;
 const Desc = styled.p`
 font-size: 20px;
 margin-top: 20px;
-color: #555;
+color: black;
  width: 80%;
+ @media only screen and (max-width: 600px) {
+		width:100%
+
+	}
 `
 const CardContainer = styled.div`
 margin-top: 50px;
 display: flex;
 flex-direction: row;
-
+ 
 `
 const Left = styled.div`
 width: 60%;
 position: relative;
+@media only screen and (max-width: 600px) {
+	width:100%;
+	}
 `
 const Right = styled.div`
 width: 40%;
+@media only screen and (max-width: 600px) {
+	display:none;
+	}
 `
 const Image = styled.img`
 width: 100%;
@@ -79,15 +147,25 @@ display: ${props => props.open && 'none'};
 const Video = styled.video`
 display: ${props => !props.open && 'none'};
 height: auto;
-margin-right: 20px;
+margin: auto;
 position: absolute;
-top:220vh;
+top:0;
 bottom:0;
 right:0;
-width: 550px; 
+left: 0;
+width: 90%; 
 z-index: 9999;
-padding: 4px;
 border:0.2px solid gray;
+@media only screen and (max-width: 600px) {
+	top: 20vh; 
+	bottom: 10%;
+	right: 1px;
+	left:1px ;
+	width: inherit;
+	z-index: 9999;
+	padding: 3px;
+	border: 0.2px solid gray;
+}
 `;
 const Button = styled.button`
 padding:10px 19px;
@@ -101,5 +179,9 @@ margin-top: 20px;
 font-size: 16px;
 letter-spacing: 1px;
 cursor: pointer;
+@media only screen and (max-width: 600px) {
+		width:60%
+
+	}
 `;
 export default Service

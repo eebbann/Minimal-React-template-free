@@ -49,6 +49,9 @@ const Navbar= ()=> {
 	display: flex;
 	margin-left:10vw;
 	align-items:center;
+	@media only screen and (max-width: 600px) {
+		display: none;
+	}
 	`;
 
 	const MenuItem = styled.ul`

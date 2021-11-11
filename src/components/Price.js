@@ -19,5 +19,11 @@ height: 100%;
 display: flex;
 justify-content: center;
 background-color: #f5f5f5;
-`
+
+@media only screen and (max-width: 600px) {
+	width:100%;
+	flex-direction: column;
+	padding-top:60px
+}
+`;
 export default Price

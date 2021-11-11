@@ -15,17 +15,26 @@ const Container = styled.div`
 width:100%;
 display:flex;
 justify-content: space-between;
+
 `
 const Card = styled.div`
 width:100px;
 border-radius: 10px;
 box-shadow: 0px 0px 17px -11px rgba(0,0,0,0.45);
 padding: 20px;
+@media only screen and (max-width: 600px) {
+		width:70%;
+		padding:10px;
+    
+	}
 `
 const Space = styled.p`
 font-size:14px;
 font-weight: lighter;
+@media only screen and (max-width: 600px) {
+	font-size: 12px;
 
+	}
 `
 const Img = styled.img`
 width:50%;
